@@ -5,6 +5,7 @@ gem 'rails', '4.1.1'
 gem 'pg'
 gem 'unicorn'
 gem 'settingslogic'
+gem 'soda-ruby', :require => 'soda'
 
 # models
 gem 'kaminari'
