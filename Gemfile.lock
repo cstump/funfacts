@@ -182,6 +182,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   haml-rails
+  hashie
   jquery-rails
   kaminari
   pg

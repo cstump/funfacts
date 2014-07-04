@@ -1,16 +1,12 @@
 source 'https://rubygems.org'
 
-# core
 gem 'rails', '4.1.1'
 gem 'pg'
 gem 'unicorn'
+gem 'hashie'
 gem 'whenever', :require => false
 gem 'soda-ruby', :require => 'soda'
-
-# models
 gem 'kaminari'
-
-# views
 gem 'haml-rails'
 
 # assets
