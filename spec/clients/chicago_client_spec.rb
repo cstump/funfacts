@@ -7,7 +7,7 @@ describe ChicagoClient do
   end
 
   it 'gives easy access to the dataset config' do
-    expect(client.datasets).to eq Rails.application.secrets.soda['dataset']
+    expect(client.datasets).to eq Secrets.instance.soda.chicago.datasets
   end
 
 end
