@@ -14,7 +14,7 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-require 'shoulda/matchers'
+Dir[ File.expand_path('support/**/*.rb', __dir__) ].each{|rb| require rb }
 
 RSpec.configure do |config|
 
