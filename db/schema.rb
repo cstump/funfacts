@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20140704001655) do
   enable_extension "plpgsql"
 
   create_table "fun_facts", force: true do |t|
+    t.string   "type",        null: false
     t.decimal  "position"
     t.string   "name",        null: false
     t.string   "description", null: false

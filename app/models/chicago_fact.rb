@@ -1,0 +1,2 @@
+class ChicagoFact < FunFact
+end
