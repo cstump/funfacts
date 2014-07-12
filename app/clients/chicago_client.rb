@@ -3,12 +3,12 @@ class ChicagoClient < SODA::Client
 
   def initialize
     super(
-      domain: Secrets.instance.soda.chicago.domain,
-      app_token: Secrets.instance.soda.app_token
+      domain: Secrets.soda.chicago.domain,
+      app_token: Secrets.soda.app_token
     )
   end
 
   def datasets
-    Secrets.instance.soda.chicago.datasets
+    Secrets.soda.chicago.datasets
   end
 end
