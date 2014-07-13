@@ -1,13 +1,10 @@
+require 'rails_helper'
+
 describe ChicagoClient do
+  let(:api_config) do {
+    domain: Secrets.soda.chicago.domain,
+    app_token: Secrets.soda.app_token
+  } end
 
-  subject(:client) { described_class.instance }
-
-  it 'is a Singleton' do
-    expect(described_class.included_modules).to include Singleton
-  end
-
-  it 'gives easy access to the dataset config' do
-    expect(client.datasets).to eq Secrets.instance.soda.chicago.datasets
-  end
-
+  it_should_behave_like 'GetBuilder'
 end
