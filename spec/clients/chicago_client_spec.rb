@@ -6,5 +6,5 @@ describe ChicagoClient do
     app_token: Secrets.soda.app_token
   } end
 
-  it_should_behave_like 'GetBuilder'
+  it_should_behave_like 'QueryBuilder'
 end

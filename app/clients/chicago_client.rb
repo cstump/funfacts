@@ -1,4 +1,4 @@
-class ChicagoClient < GetBuilder
+class ChicagoClient < QueryBuilder
 
   def initialize(resource = nil)
     super(

@@ -1,4 +1,4 @@
-shared_examples 'GetBuilder' do
+shared_examples 'QueryBuilder' do
   let(:resource) { 't2rn-p8d7' }
 
   let(:params) do {
@@ -26,7 +26,7 @@ shared_examples 'GetBuilder' do
     end
 
     it 'properly initializes the super class' do
-      expect_any_instance_of(GetBuilder).to receive(:initialize).with(resource, api_config)
+      expect_any_instance_of(QueryBuilder).to receive(:initialize).with(resource, api_config)
       described_class.new resource
     end
 
@@ -38,23 +38,21 @@ shared_examples 'GetBuilder' do
 
   
   describe 'query building' do
+    before do
+      builder.select(params['$select']).group(params['$group']).order(params['$order']).limit(params['$limit'])
+    end
+
     it 'defers to grandsuper before considering a method call as a query build' do
       expect(SODA::Client.instance_methods - builder.methods).to be_empty
     end
 
-    describe 'method chaining' do
-      before do
-        builder.select(params['$select']).group(params['$group']).order(params['$order']).limit(params['$limit'])
-      end
+    it 'builds query parameters' do
+      expect(builder.params).to eq params
+    end
 
-      it 'builds query parameters' do
-        expect(builder.params).to eq params
-      end
-
-      it "defers to grandsuper's #get" do
-        expect_any_instance_of(SODA::Client).to receive(:get).with(resource, params)
-        builder.get
-      end
+    it "defers to grandsuper's #get" do
+      expect_any_instance_of(SODA::Client).to receive(:get).with(resource, params)
+      builder.get
     end
   end
 end

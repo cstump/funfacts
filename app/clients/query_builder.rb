@@ -1,4 +1,10 @@
-class GetBuilder < SODA::Client
+#
+# Enables different query styles for accessing SODA
+#
+# Client.new.get 't2rn-p8d7', '$select' => 'stationame,sum(monthtotal)', '$group' => 'stationame', '$limit' => 10
+# Client.new('t2rn-p8d7').select('stationame,sum(monthtotal)').group('stationame').limit(10).get
+# Client.new.select('stationame,sum(monthtotal)').group('stationame').limit(10).get('t2rn-p8d7')
+class QueryBuilder < SODA::Client
   attr_reader :params, :resource
 
   def initialize(resource = nil, *config)
