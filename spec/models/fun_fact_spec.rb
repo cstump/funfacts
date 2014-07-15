@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe FunFact do
+Rspec.describe FunFact, type: :model do
 
   subject(:fact) { build :fun_fact }
 
