@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-Rspec.describe FunFact, type: :model do
+RSpec.describe FunFact, type: :model do
 
-  subject(:fact) { build :fun_fact }
+  subject(:fact) { build :chicago_fact }
 
   it { should validate_presence_of :name }
   it { should validate_presence_of :description }
@@ -14,7 +14,7 @@ Rspec.describe FunFact, type: :model do
   end
 
   it 'increments the position on auto assign' do
-    3.times{ create :fun_fact }
+    3.times{ create :chicago_fact }
     expect(described_class.last.position).to eq 3
   end
 
