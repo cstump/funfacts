@@ -1,4 +1,6 @@
 class FunFact < ActiveRecord::Base
+  has_and_belongs_to_many :datasets
+
   validates :name, :description, presence: true
 
   before_create :assign_position
