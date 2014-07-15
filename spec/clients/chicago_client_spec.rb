@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe ChicagoClient do
+RSpec.describe ChicagoClient do
   let(:api_config) do {
     domain: Secrets.soda.chicago.domain,
     app_token: Secrets.soda.app_token

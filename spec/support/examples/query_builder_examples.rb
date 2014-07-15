@@ -1,4 +1,4 @@
-shared_examples 'QueryBuilder' do
+RSpec.shared_examples_for 'QueryBuilder' do
   let(:resource) { 't2rn-p8d7' }
 
   let(:params) do {
