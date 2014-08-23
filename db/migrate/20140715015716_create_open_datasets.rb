@@ -1,6 +1,6 @@
-class CreateDatasets < ActiveRecord::Migration
+class CreateOpenDatasets < ActiveRecord::Migration
   def change
-    create_table :datasets do |t|
+    create_table :open_datasets do |t|
       t.string :type, null: false
       t.string :name
       t.string :uid, null: false
@@ -8,6 +8,6 @@ class CreateDatasets < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :datasets, :uid
+    add_index :open_datasets, :uid
   end
 end

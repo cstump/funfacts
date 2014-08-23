@@ -4,7 +4,7 @@ RSpec.describe FunFact, type: :model do
 
   subject(:fact) { build :chicago_fact }
 
-  it { should have_and_belong_to_many :datasets }
+  it { should have_and_belong_to_many :open_datasets }
   it { should validate_presence_of :name }
   it { should validate_presence_of :description }
 

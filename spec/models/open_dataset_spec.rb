@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Dataset, type: :model do
+RSpec.describe OpenDataset, type: :model do
 
   subject(:dataset) { build :chicago_dataset }
 

@@ -1,2 +1,0 @@
-class ChicagoDataset < Dataset
-end
