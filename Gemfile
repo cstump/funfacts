@@ -26,6 +26,8 @@ group :development do
 end
 
 group :test do
+  gem 'vcr'
+  gem 'webmock'
   gem 'shoulda-matchers', require: false
 end
 
