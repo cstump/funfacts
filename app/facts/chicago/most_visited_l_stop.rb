@@ -2,7 +2,7 @@ module Chicago
   class MostVisitedLStop
     include ActionView::Helpers::NumberHelper
 
-    def update
+    def update!
       fact = Chicago::Fact.find_or_initialize_by name: self.class.name
       fact.open_datasets << dataset
       fact.description = fact_text
