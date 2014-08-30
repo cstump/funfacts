@@ -1,0 +1,602 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://data.cityofchicago.org/resource/t2rn-p8d7.json?$group=stationame&$limit=1&$order=sum_monthtotal%20DESC&$select=stationame,sum(monthtotal)
+    body:
+      encoding: UTF-8
+      string: 'null'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      X-App-Token:
+      - akFnHvEKMsgGSBjOhDgxQ6G5G
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 26 Aug 2014 02:57:13 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Etag:
+      - '"4f100708768b63b0036b2fd7b2d938ac"'
+      Last-Modified:
+      - Wed, 20 Aug 2014 14:16:37 PDT
+      X-Soda2-Warning:
+      - X-SODA2-Fields, X-SODA2-Types, and X-SODA2-Legacy-Types are deprecated
+      X-Soda2-Fields:
+      - '[":updated_at","stationame",":id","sum_monthtotal",":created_at"]'
+      X-Soda2-Types:
+      - '["meta_data","text","meta_data","number","meta_data"]'
+      X-Soda2-Legacy-Types:
+      - 'true'
+      X-Socrata-Region:
+      - production
+      Age:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: |-
+        [ {
+          "stationame" : "Clark/Lake",
+          "sum_monthtotal" : "64547764"
+        }
+         ]
+    http_version: 
+  recorded_at: Tue, 26 Aug 2014 02:57:13 GMT
+- request:
+    method: get
+    uri: https://data.cityofchicago.org/resource/t2rn-p8d7.json?$select=month_beginning&$where=stationame%20=%20'Clark/Lake'
+    body:
+      encoding: UTF-8
+      string: 'null'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      X-App-Token:
+      - akFnHvEKMsgGSBjOhDgxQ6G5G
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 26 Aug 2014 02:57:14 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Etag:
+      - '"4f100708768b63b0036b2fd7b2d938ac"'
+      Last-Modified:
+      - Wed, 20 Aug 2014 21:16:37 UTC
+      X-Soda2-Warning:
+      - X-SODA2-Fields, X-SODA2-Types, and X-SODA2-Legacy-Types are deprecated
+      X-Soda2-Fields:
+      - '[":updated_at",":id",":created_at","month_beginning"]'
+      X-Soda2-Types:
+      - '["meta_data","meta_data","meta_data","calendar_date"]'
+      X-Soda2-Legacy-Types:
+      - 'true'
+      X-Socrata-Region:
+      - production
+      Age:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: |-
+        [ {
+          "month_beginning" : "2001-01-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2001-02-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2001-03-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2001-04-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2001-05-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2001-06-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2001-07-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2001-08-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2001-09-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2001-10-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2001-11-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2001-12-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2002-01-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2002-02-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2002-03-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2002-04-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2002-05-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2002-06-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2002-07-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2002-08-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2002-09-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2002-10-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2002-11-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2002-12-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2003-01-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2003-02-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2003-03-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2003-04-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2003-05-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2003-06-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2003-07-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2003-08-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2003-09-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2003-10-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2003-11-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2003-12-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2004-01-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2004-02-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2004-03-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2004-04-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2004-05-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2004-06-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2004-07-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2004-08-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2004-09-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2004-10-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2004-11-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2004-12-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2005-01-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2005-02-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2005-03-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2005-04-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2005-05-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2005-06-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2005-07-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2005-08-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2005-09-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2005-10-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2005-11-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2005-12-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2006-01-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2006-02-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2006-03-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2006-04-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2006-05-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2006-06-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2006-07-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2006-08-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2006-09-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2006-10-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2006-11-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2006-12-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2007-01-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2007-02-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2007-03-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2007-04-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2007-05-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2007-06-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2007-07-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2007-08-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2007-09-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2007-10-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2007-11-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2007-12-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2008-01-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2008-02-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2008-03-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2008-04-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2008-05-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2008-06-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2008-07-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2008-08-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2008-09-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2008-10-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2008-11-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2008-12-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2009-01-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2009-02-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2009-03-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2009-04-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2009-05-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2009-06-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2009-07-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2009-08-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2009-09-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2009-10-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2009-11-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2009-12-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2010-01-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2010-02-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2010-03-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2010-04-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2010-05-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2010-06-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2010-07-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2010-08-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2010-09-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2010-10-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2010-11-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2010-12-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2011-01-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2011-02-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2011-03-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2011-04-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2011-05-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2011-06-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2011-07-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2011-08-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2011-09-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2011-10-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2011-11-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2011-12-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2012-01-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2012-02-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2012-03-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2012-04-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2012-05-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2012-06-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2012-07-01T07:00:00"
+        }
+        , {
+          "month_beginning" : "2012-08-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2012-09-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2012-10-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2012-11-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2012-12-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2013-01-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2013-02-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2013-03-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2013-04-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2013-05-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2013-06-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2013-07-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2013-08-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2013-09-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2013-10-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2013-11-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2013-12-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2014-01-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2014-02-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2014-03-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2014-04-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2014-05-01T00:00:00"
+        }
+         ]
+    http_version: 
+  recorded_at: Tue, 26 Aug 2014 02:57:14 GMT
+recorded_with: VCR 2.9.2
