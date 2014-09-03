@@ -43,7 +43,7 @@ module Chicago
     end
 
     def fact_text
-      I18n.t('most_visited_l_stop.description',
+      I18n.t('chicago.facts.most_visited_l_stop.description',
         stationame: busiest_l_stop.stationame,
         total: number_with_delimiter(busiest_l_stop.sum_monthtotal),
         oldest_date: l_stop_dates.first.strftime('%m/%d/%Y'),
