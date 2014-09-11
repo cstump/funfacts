@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
+gem 'font-awesome-sass'
 gem 'turbolinks'
 
 group :development do
