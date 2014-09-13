@@ -18,4 +18,11 @@ namespace :ff do
     end
   end
 
+
+  task :seed_dummy_data, [:fact_count] => :environment do |t, args|
+    args.fact_count.to_i.times do
+      FactoryGirl.create :fact_with_datasets, datasets_count: rand(1..10)
+    end
+  end
+
 end
