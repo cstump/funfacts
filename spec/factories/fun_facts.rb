@@ -8,7 +8,8 @@ FactoryGirl.define do
       ignore { datasets_count 3 }
 
       after :create do |fact, evaluator|
-        create_list :chicago_dataset, evaluator.datasets_count, fun_fact: fact
+        list = create_list :chicago_dataset, evaluator.datasets_count
+        list.each {|dataset| dataset.fun_facts << fact }
       end
     end
   end

@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :chicago_dataset, class: Chicago::Dataset do
-    name Faker::Lorem.sentence
+    name Faker::Lorem.sentence(3)
     uid "#{Faker::Lorem.characters(4)}-#{Faker::Lorem.characters(4)}"
     url Faker::Internet.url
 
@@ -8,7 +8,8 @@ FactoryGirl.define do
       ignore { facts_count 3 }
 
       after :create do |dataset, evaluator|
-        create_list :chicago_fact, evaluator.facts_count, open_dataset: dataset
+        list = create_list :chicago_fact, evaluator.facts_count
+        list.each {|fact| fact.open_datasets << dataset }
       end
     end
   end
