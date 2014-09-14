@@ -7,6 +7,10 @@ RSpec.describe Chicago::FactsController, type: :controller do
     get :index
   end
 
+  it 'is a configurable value' do
+    expect(described_class::FACTS_PER_PAGE).to eq Secrets.chicago.facts_per_page
+  end
+
   it 'services the index page' do
     should render_template :index
   end
