@@ -1,11 +1,11 @@
 module ApplicationHelper
 
-  def page_title
-    t "#{region}.title"
-  end
-
   def region
     controller.class.name.gsub(/::.+/, '').downcase
+  end
+
+  def region_t(ypath, *args)
+    t "#{region}.#{ypath}", *args
   end
 
   def source_links_for(fact)
