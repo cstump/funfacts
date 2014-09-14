@@ -1,8 +1,11 @@
 en:
   sources: "Fact derived from these interesting sets of data: %{source_links}"
+  about_link: 'About'
+  suggestion_link: 'Suggest a fact'
 
   chicago:
-    title: "Fun Facts Chicago"
+    title: "Fun Facts Chicago | Chicago's open data as fun little facts"
+    heading: "Fun Facts Chicago"
     facts:
       most_visited_l_stop:
         description: "The busiest L stop is %{stationame}. %{total} riders entered the L system from %{stationame} between %{oldest_date} and %{latest_date}."
