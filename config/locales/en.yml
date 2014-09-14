@@ -1,7 +1,8 @@
 en:
+  sources: "Fact derived from these interesting sets of data: %{source_links}"
+
   chicago:
     title: "Fun Facts Chicago"
     facts:
-      sources: "Fact derived from these interesting sets of data: %{source_links}"
       most_visited_l_stop:
         description: "The busiest L stop is %{stationame}. %{total} riders entered the L system from %{stationame} between %{oldest_date} and %{latest_date}."

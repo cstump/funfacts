@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe ApplicationHelper, type: :helper do
 
   before do
-    expect(helper).to receive(:controller).and_return Chicago::FactsController.new
+    allow(helper).to receive(:controller).and_return Chicago::FactsController.new
   end
 
   it 'derives the title translation from the controller name' do
@@ -12,6 +12,18 @@ RSpec.describe ApplicationHelper, type: :helper do
 
   it 'derives the region from the controller name' do
     expect(helper.region).to eq 'chicago'
+  end
+
+  describe '#source_links_for' do
+    let(:fact) { build(:fact_with_datasets) }
+    let(:datasets) { fact.open_datasets }
+    let(:links) { helper.source_links_for fact }
+
+    it 'returns a list of dataset URL links' do
+      datasets.map(&:url).each do |url|
+        expect(links.any?{|link| link.include url.url }).to be_true
+      end
+    end
   end
 
 end
