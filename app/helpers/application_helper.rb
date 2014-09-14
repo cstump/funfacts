@@ -1,7 +1,11 @@
 module ApplicationHelper
 
   def page_title
-    t "#{controller.class.name.gsub(/::.+/, '').downcase}.title"
+    t "#{region}.title"
+  end
+
+  def region
+    controller.class.name.gsub(/::.+/, '').downcase
   end
 
 end
