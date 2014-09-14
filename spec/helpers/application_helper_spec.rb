@@ -15,13 +15,13 @@ RSpec.describe ApplicationHelper, type: :helper do
   end
 
   describe '#source_links_for' do
-    let(:fact) { build(:fact_with_datasets) }
-    let(:datasets) { fact.open_datasets }
+    let(:fact) { build(:fact, datasets_count: 3) }
+    let(:datasets) { fact.datasets }
     let(:links) { helper.source_links_for fact }
 
     it 'returns a list of dataset URL links' do
-      datasets.map(&:url).each do |url|
-        expect(links.any?{|link| link.include url.url }).to be_true
+      datasets.map(&:uri).each do |url|
+        expect(links).to include url
       end
     end
   end

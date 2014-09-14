@@ -8,13 +8,13 @@ RSpec.describe Chicago::MostVisitedLStop, vcr: { cassette_name: 'most visited l 
     before { fact.update! }
 
     it 'creates a fun fact' do
-      expect(Chicago::Fact.count).to eq 1
+      expect(Fact.count).to eq 1
     end
 
     it 'updates the existing fact instead of creating a new one' do
       expect{
         fact.update!
-      }.to_not change{ Chicago::Fact.count }
+      }.to_not change{ Fact.count }
     end
 
     it 'requests the right resource' do
@@ -36,8 +36,8 @@ RSpec.describe Chicago::MostVisitedLStop, vcr: { cassette_name: 'most visited l 
     end
 
     it 'associates the fact with the dataset' do
-      expect(fun_fact.open_datasets.size).to eq 1
-      expect(fun_fact.open_datasets.first).to eq Chicago::Dataset.where(name: 'LStationEntries').first
+      expect(fun_fact.datasets.size).to eq 1
+      expect(fun_fact.datasets.first).to eq Dataset.where(name: 'LStationEntries').first
     end
   end
 end

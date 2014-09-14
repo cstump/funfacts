@@ -3,6 +3,9 @@ en:
   about_link: 'About'
   suggestion_link: 'Suggest a fact'
 
+  errors:
+    no_datasets: 'must be at least length 1'
+
   chicago:
     title: "Fun Facts Chicago | Chicago's open data as fun little facts"
     heading: "Fun Facts Chicago"

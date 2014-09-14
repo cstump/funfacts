@@ -4,7 +4,7 @@ module Chicago
     FACTS_PER_PAGE = Secrets.chicago.facts_per_page
 
     def index
-      @facts = Chicago::Fact.order('position ASC').page(params[:page]).per FACTS_PER_PAGE
+      @facts = Fact.order('position ASC').page(params[:page]).per FACTS_PER_PAGE
     end
 
   end

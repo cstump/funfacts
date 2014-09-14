@@ -3,8 +3,8 @@ module Chicago
     include ActionView::Helpers::NumberHelper
 
     def update!
-      fact = Chicago::Fact.find_or_initialize_by name: self.class.name
-      fact.open_datasets << dataset
+      fact = Fact.find_or_initialize_by name: self.class.name, region: Regions::CHICAGO
+      fact.datasets << dataset
       fact.description = fact_text
       fact.save!
       fact
@@ -18,7 +18,7 @@ module Chicago
     end
 
     def dataset
-      @dataset ||= Chicago::Dataset.where(name: 'LStationEntries').first
+      @dataset ||= Dataset.where(name: 'LStationEntries').first
     end
 
     def busiest_l_stop
