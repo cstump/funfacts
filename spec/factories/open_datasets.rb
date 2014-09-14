@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :chicago_dataset, class: Chicago::Dataset do
-    name Faker::Lorem.sentence(3)
-    uid "#{Faker::Lorem.characters(4)}-#{Faker::Lorem.characters(4)}"
-    url Faker::Internet.url
+    name { Faker::Lorem.words(3).join(' ') }
+    uid { "#{Faker::Lorem.characters(4)}-#{Faker::Lorem.characters(4)}" }
+    url { Faker::Internet.url }
 
     factory :dataset_with_facts do
       ignore { facts_count 3 }
