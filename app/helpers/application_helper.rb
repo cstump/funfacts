@@ -1,11 +1,15 @@
 module ApplicationHelper
 
   def region
-    controller.class.name.gsub(/::.+/, '').downcase
+    controller.region
   end
 
-  def region_t(ypath, *args)
-    t "#{region}.#{ypath}", *args
+  def region_t(ypath, args = {})
+    t "#{region}.#{ypath}", args
+  end
+
+  def region_path(name, args = {})
+    send "#{name}_path", args.merge(region: region)
   end
 
   def source_links_for(fact)

@@ -7,9 +7,9 @@
         %span.icon-bar
         %span.icon-bar
 
-      %h1= link_to region_t('heading'), root_path
+      %h1= link_to region_t('heading'), region_path('root')
 
     #ff-navbar-collapse.collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-right
-        %li= link_to t('about_link'), '#'
-        %li= link_to t('suggestion_link'), '#'
+        %li= link_to t('about_link'), region_path('root')
+        %li= link_to t('suggestion_link'), region_path('root')

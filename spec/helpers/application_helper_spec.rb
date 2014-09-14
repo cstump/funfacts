@@ -1,18 +1,26 @@
 require 'rails_helper'
 
 RSpec.describe ApplicationHelper, type: :helper do
+  include_context 'region'
 
   before do
-    allow(helper).to receive(:controller).and_return Chicago::FactsController.new
+    allow(helper).to receive(:controller).and_return FactsController.new
   end
 
-  it 'derives the region from the controller name' do
-    expect(helper.region).to eq 'chicago'
+  it 'derives the region from the controller' do
+    expect(helper.region).to eq region
   end
 
-  it 'derives the title translation from the region' do
-    expect(helper.region_t('title')).to eq I18n.t('chicago.title')
+  it 'regionalizes the translation' do
+    expect(helper.region_t('title')).to eq I18n.t("#{region}.title")
   end
+
+  it 'regionalizes the path' do
+    params = { q: 'a' }
+    expect(helper).to receive(:root_path).with(params.merge(region: region))
+    helper.region_path 'root', params
+  end
+
 
   describe '#source_links_for' do
     let(:fact) { build(:fact, datasets_count: 3) }
