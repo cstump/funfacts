@@ -1,0 +1,12 @@
+$ ->
+  if $('.chicago').length > 0
+    $('#facts').infinitescroll({
+      navSelector  : "#content nav",
+      nextSelector : "#content nav .next a",
+      itemSelector : ".list-group-item",
+      loading: {
+        finishedMsg: null,
+        img: '<%= image_path 'chicago-ajax-loader.gif' %>',
+        msgText: ''
+      },
+    })

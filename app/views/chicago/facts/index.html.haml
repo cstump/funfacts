@@ -1,7 +1,10 @@
-%ul#facts.chicago
-  - @facts.each do |fact|
-    %li
-      %h2= fact.description
-      %aside= source_links_for fact
+= render partial: "top_nav"
+
+#content
+  %ul#facts.list-group
+    - @facts.each do |fact|
+      %li.list-group-item
+        %h2= fact.description
+        %aside= source_links_for fact
 
   = paginate @facts

@@ -1,0 +1,16 @@
+%nav#top-nav{ role: 'navigation', class: 'navbar navbar-default navbar-fixed-top' }
+  .container
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %button{ type: 'button', class: 'navbar-toggle', data: { toggle: 'collapse', target: '#ff-navbar-collapse' } }
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+
+      %h1= link_to 'Fun Facts Chicago', root_path
+
+    #ff-navbar-collapse.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li= link_to 'About', '#'
+        %li= link_to 'Suggest a fact', '#'
