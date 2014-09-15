@@ -9,6 +9,18 @@ RSpec.describe FactsController, type: :controller do
     expect(assigns(:facts).size).to eq Secrets.facts_per_page
   end
 
+  describe 'region setting' do
+    it 'defaults the region to chicago if bad region is given' do
+      get :index, region: 'ajdj'
+      expect(controller.region).to eq Region.chicago
+    end
+
+    it 'defaults the region to chicago if no region is given' do
+      get :index
+      expect(controller.region).to eq Region.chicago
+    end
+  end
+
   describe 'with specified page size' do
     let(:facts_per_page) { 5 }
     
