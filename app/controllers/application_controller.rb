@@ -4,7 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def region
-    @region ||= Region.chicago #TODO: derive region from requested domain
+    #TODO: derive region from requested domain
+    @region ||= (Region.where(name: region_param).first || Region.chicago)
   end
 
+
+  private
+
+  def region_param
+    params.fetch :region, 'chicago'
+  end
 end
