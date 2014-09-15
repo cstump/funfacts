@@ -8,16 +8,16 @@ RSpec.describe ApplicationHelper, type: :helper do
   end
 
   it 'derives the region from the controller' do
-    expect(helper.region).to eq region
+    expect(helper.region).to eq region.name
   end
 
   it 'regionalizes the translation' do
-    expect(helper.region_t('title')).to eq I18n.t("#{region}.title")
+    expect(helper.region_t('title')).to eq I18n.t("#{region.name}.title")
   end
 
   it 'regionalizes the path' do
     params = { q: 'a' }
-    expect(helper).to receive(:root_path).with(params.merge(region: region))
+    expect(helper).to receive(:root_path).with(params.merge(region: region.name))
     helper.region_path 'root', params
   end
 

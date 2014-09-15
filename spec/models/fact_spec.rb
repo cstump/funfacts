@@ -5,6 +5,7 @@ RSpec.describe Fact, type: :model do
   subject(:fact) { build :fact }
 
   it { should have_and_belong_to_many :datasets }
+  it { should have_and_belong_to_many :regions }
   it { should validate_presence_of :name }
   it { should validate_presence_of :description }
 
@@ -18,6 +19,18 @@ RSpec.describe Fact, type: :model do
   it 'increments the position on auto assign' do
     3.times{ create :fact }
     expect(described_class.last.position).to be >= 3
+  end
+
+  it 'requires a dataset' do
+    fact.datasets = []
+    expect(fact).to_not be_valid
+    expect(fact.errors[:datasets]).to be_present
+  end
+
+  it 'requires a region' do
+    fact.regions = []
+    expect(fact).to_not be_valid
+    expect(fact.errors[:regions]).to be_present
   end
 
 end

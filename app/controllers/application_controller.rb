@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def region
-    Regions::CHICAGO #TODO: derive region from requested domain
+    @region ||= Region.chicago #TODO: derive region from requested domain
   end
 
 end

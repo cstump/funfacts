@@ -5,6 +5,7 @@ en:
 
   errors:
     no_datasets: 'must be at least length 1'
+    no_regions: 'must be at least length 1'
 
   chicago:
     title: "Fun Facts Chicago | Chicago's open data as fun little facts"

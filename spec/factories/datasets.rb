@@ -3,6 +3,5 @@ FactoryGirl.define do
     name { Faker::Lorem.words(3).join(' ') }
     sequence(:uri) {|n| Faker::Internet.url + n.to_s }
     uid { "#{Faker::Lorem.characters(4)}-#{Faker::Lorem.characters(4)}" }
-    provider Faker::Internet.domain_name
   end
 end

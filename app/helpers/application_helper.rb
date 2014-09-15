@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def region
-    controller.region
+    controller.region.name
   end
 
   def region_t(ypath, args = {})

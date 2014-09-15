@@ -3,8 +3,9 @@ module Chicago
     include ActionView::Helpers::NumberHelper
 
     def update!
-      fact = Fact.find_or_initialize_by name: self.class.name, region: Regions::CHICAGO
+      fact = Fact.find_or_initialize_by name: self.class.name
       fact.datasets << dataset
+      fact.regions << Region.chicago
       fact.description = fact_text
       fact.save!
       fact
