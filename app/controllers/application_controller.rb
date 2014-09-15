@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def region
     #TODO: derive region from requested domain
-    @region ||= (Region.where(name: region_param).first || Region.chicago)
+    @region ||= (requested_region || Region.chicago)
   end
 
 
@@ -13,5 +13,9 @@ class ApplicationController < ActionController::Base
 
   def region_param
     params.fetch :region, 'chicago'
+  end
+
+  def requested_region
+    Region.where(name: region_param).first
   end
 end
