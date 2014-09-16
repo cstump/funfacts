@@ -5,6 +5,6 @@ class Region < ActiveRecord::Base
   validates :name, uniqueness: true
 
   def self.chicago
-    find_by name: 'chicago'
+    @chicago ||= find_by(name: 'chicago')
   end
 end
