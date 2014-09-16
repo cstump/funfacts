@@ -39,9 +39,8 @@ RSpec.describe FactsController, type: :controller do
 
     it 'orders the facts by position' do
       expect(assigns(:facts)).to eq(
-        Fact.joins(:regions)
-        .where('regions.name = ?', region.name)
-        .order('position ASC')
+        Region.find_by(name: region.name)
+        .facts
         .page(1)
         .per facts_per_page
       )

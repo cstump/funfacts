@@ -7,6 +7,8 @@ class Fact < ActiveRecord::Base
 
   before_save :assign_position
 
+  default_scope { order('position ASC') }
+
 
   private
 
