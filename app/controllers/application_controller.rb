@@ -16,6 +16,6 @@ class ApplicationController < ActionController::Base
   end
 
   def requested_region
-    Region.where(name: region_param).first
+    Region.find_by name: region_param
   end
 end
