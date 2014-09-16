@@ -10,7 +10,7 @@ RSpec.describe ApplicationHelper, type: :helper do
   end
 
   it 'derives the region from the controller' do
-    expect(helper.region).to eq region.name
+    expect(helper.region_name).to eq region.name
   end
 
   it 'regionalizes the translation' do
