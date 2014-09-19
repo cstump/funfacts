@@ -14,7 +14,7 @@ module ApplicationHelper
 
   def source_links_for(fact)
     sets = fact.datasets.map do |set|
-      link_to set.name.underscore.humanize, set.uri, target: '_blank', title: I18n.t('source_title')
+      link_to t('source.link', link: set.name.underscore.humanize), set.uri, target: '_blank'
     end
 
     sets.join(', ').html_safe

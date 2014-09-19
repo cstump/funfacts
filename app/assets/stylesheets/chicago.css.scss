@@ -4,30 +4,34 @@
 .chicago {
   font-family: 'Aller';
 
-  #top-nav * {
+  #top-nav a {
     color: $chicago-red;
-
-    li a {
-      margin-top: 7px;
-    }
   }
 
   #heading {
     font-weight: bold;
-    margin-top: 15px;
     font-size: 30px;
     font-family: 'Railway';
     font-style: italic;
+    position: absolute;
+    left: 15px;
   }
 
   #facts {
-    margin-top: 4%;
+    margin-top: 6%;
   }
 
   .fact {
-    margin-top: 10px;
-    margin-bottom: 23px;
-    font-size: 22px;
+    margin: 10px 0 23px 0;
+
+    h2 {
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 17px;
+      font-style: italic;
+    }
   }
 
   .list-group-item * {
@@ -36,10 +40,16 @@
 
   .sources {
     font-weight: lighter;
+  }
 
-    .fa {
-      margin-right: 5px;
-      color: $chicago-red;
+  #source-label {
+    color: $chicago-red;
+  }
+
+  @media (min-width: $screen-md-min) {
+    .navbar-right {
+      right: 15px;
+      position: absolute;
     }
   }
 }

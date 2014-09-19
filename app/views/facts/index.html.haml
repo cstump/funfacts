@@ -1,12 +1,15 @@
 = render partial: "top_nav"
 
-#content
+.container
   %ul#facts.list-group
     - @facts.each do |fact|
       %li.list-group-item
-        %h2.fact= fact.description
+        %article.fact
+          %h2= fact.heading.html_safe
+          %p= fact.body.html_safe
+
         %aside.sources
-          %i.fa.fa-bar-chart
+          %span#source-label= t 'source.label'
           = source_links_for fact
 
   = paginate @facts

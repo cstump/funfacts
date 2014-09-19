@@ -1,7 +1,11 @@
 en:
-  source_title: 'Fact Source'
-  about_link: 'About'
-  suggestion_link: 'Suggest a fact'
+  nav:
+    about: 'About'
+    suggestion: 'Suggest a fact'
+
+  source:
+    label: 'Source:'
+    link: '%{link} dataset'
 
   errors:
     no_datasets: 'must be at least length 1'
