@@ -1,0 +1,17 @@
+* {
+  color: $page-color;
+  font-family: $page-font;
+}
+
+#top-nav a {
+  color: $nav-link-color;
+}
+
+#heading {
+  font-weight: bold;
+  font-size: 30px;
+  font-family: $heading-font;
+  font-style: italic;
+  position: absolute;
+  left: 15px;
+}

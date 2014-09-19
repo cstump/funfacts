@@ -1,55 +1,13 @@
 @import 'fonts';
 @import 'colors';
 
+$page-font: $aller;
+$page-color: $charcoal-blue;
+$nav-link-color: $chicago-red;
+$heading-font: $railway;
+$source-label-color: $chicago-red;
+
 .chicago {
-  font-family: 'Aller';
-
-  #top-nav a {
-    color: $chicago-red;
-  }
-
-  #heading {
-    font-weight: bold;
-    font-size: 30px;
-    font-family: 'Railway';
-    font-style: italic;
-    position: absolute;
-    left: 15px;
-  }
-
-  #facts {
-    margin-top: 6%;
-  }
-
-  .fact {
-    margin: 10px 0 23px 0;
-
-    h2 {
-      font-size: 28px;
-    }
-
-    p {
-      font-size: 17px;
-      font-style: italic;
-    }
-  }
-
-  .list-group-item * {
-    color: $charcoal-blue;
-  }
-
-  .sources {
-    font-weight: lighter;
-  }
-
-  #source-label {
-    color: $chicago-red;
-  }
-
-  @media (min-width: $screen-md-min) {
-    .navbar-right {
-      right: 15px;
-      position: absolute;
-    }
-  }
+  @import 'layout';
+  @import 'index';
 }
