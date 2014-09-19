@@ -1,5 +1,5 @@
 en:
-  sources: "Fact derived from these interesting sets of data: %{source_links}"
+  source_title: 'Fact Source'
   about_link: 'About'
   suggestion_link: 'Suggest a fact'
 

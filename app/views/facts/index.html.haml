@@ -4,7 +4,9 @@
   %ul#facts.list-group
     - @facts.each do |fact|
       %li.list-group-item
-        %h2= fact.description
-        %aside= source_links_for fact
+        %h2.fact= fact.description
+        %aside.sources
+          %i.fa.fa-bar-chart
+          = source_links_for fact
 
   = paginate @facts

@@ -1,15 +1,45 @@
-.chicago {
-    h1 {
-      margin-top: 15px;
-      font-size: 18px;
+@import 'fonts';
+@import 'colors';
 
-      a {
-        color: inherit;
-        font-style: italic;
-      }
+.chicago {
+  font-family: 'Aller';
+
+  #top-nav * {
+    color: $chicago-red;
+
+    li a {
+      margin-top: 7px;
     }
+  }
+
+  #heading {
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 30px;
+    font-family: 'Railway';
+    font-style: italic;
+  }
 
   #facts {
     margin-top: 4%;
+  }
+
+  .fact {
+    margin-top: 10px;
+    margin-bottom: 23px;
+    font-size: 22px;
+  }
+
+  .list-group-item * {
+    color: $charcoal-blue;
+  }
+
+  .sources {
+    font-weight: lighter;
+
+    .fa {
+      margin-right: 5px;
+      color: $chicago-red;
+    }
   }
 }
