@@ -36,8 +36,9 @@ ActiveRecord::Schema.define(version: 20140915020142) do
 
   create_table "facts", force: true do |t|
     t.decimal  "position"
-    t.string   "name",        null: false
-    t.string   "description", null: false
+    t.string   "name",       null: false
+    t.string   "heading"
+    t.string   "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

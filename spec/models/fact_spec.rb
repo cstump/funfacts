@@ -7,7 +7,6 @@ RSpec.describe Fact, type: :model do
   it { should have_and_belong_to_many :datasets }
   it { should have_and_belong_to_many :regions }
   it { should validate_presence_of :name }
-  it { should validate_presence_of :description }
 
   it 'auto assigns a position' do
     fact.position = nil
@@ -31,6 +30,12 @@ RSpec.describe Fact, type: :model do
     fact.regions = []
     expect(fact).to_not be_valid
     expect(fact.errors[:regions]).to be_present
+  end
+
+  it 'requires a body or heading' do
+    fact.body = fact.heading = nil
+    expect(fact).to_not be_valid
+    expect(fact.errors[:base]).to be_present
   end
 
 end

@@ -6,10 +6,12 @@ en:
   errors:
     no_datasets: 'must be at least length 1'
     no_regions: 'must be at least length 1'
+    no_description: 'fact must have a heading and/or body'
 
   chicago:
     title: "Fun Facts Chicago | Chicago's open data as fun little facts"
     heading: "Fun Facts Chicago"
     facts:
       most_visited_l_stop:
-        description: "The busiest L stop is %{stationame}. %{total} riders entered the L system from %{stationame} between %{oldest_date} and %{latest_date}."
+        heading: "The busiest L stop is %{stationame}"
+        body: "%{total} riders entered the L system from %{stationame} between %{oldest_date} and %{latest_date}."

@@ -2,7 +2,8 @@ FactoryGirl.define do
   factory :fact do
     sequence(:position){|n| n }
     name { Faker::Lorem.word }
-    description { Faker::Lorem.sentence }
+    body { Faker::Lorem.sentence(8) }
+    heading { Faker::Lorem.sentence }
 
     ignore do
       regions_count 1

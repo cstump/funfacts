@@ -6,7 +6,8 @@ module Chicago
       fact = Fact.find_or_initialize_by name: self.class.name
       fact.datasets << dataset
       fact.regions << Region.chicago
-      fact.description = fact_text
+      fact.body = fact_body
+      fact.heading = fact_heading
       fact.save!
       fact
     end
@@ -19,7 +20,7 @@ module Chicago
     end
 
     def dataset
-      @dataset ||= Dataset.where(name: 'LStationEntries').first
+      @dataset ||= Dataset.find_by(name: 'LStationEntries')
     end
 
     def busiest_l_stop
@@ -43,8 +44,12 @@ module Chicago
       end
     end
 
-    def fact_text
-      I18n.t('chicago.facts.most_visited_l_stop.description',
+    def fact_heading
+      I18n.t 'chicago.facts.most_visited_l_stop.heading', stationame: busiest_l_stop.stationame
+    end
+
+    def fact_body
+      I18n.t('chicago.facts.most_visited_l_stop.body',
         stationame: busiest_l_stop.stationame,
         total: number_with_delimiter(busiest_l_stop.sum_monthtotal),
         oldest_date: l_stop_dates.first.strftime('%m/%d/%Y'),

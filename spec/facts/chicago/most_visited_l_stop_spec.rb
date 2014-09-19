@@ -26,9 +26,14 @@ RSpec.describe Chicago::MostVisitedLStop, vcr: { cassette_name: 'most visited l 
   describe 'the resulting FunFact' do
     let(:fun_fact) { fact.update! }
 
-    it 'sets the description' do
-      expect(I18n).to receive(:t).with('chicago.facts.most_visited_l_stop.description', anything).and_call_original
-      expect(fun_fact.description).to be_present
+    it 'sets the body' do
+      expect(I18n).to receive(:t).with('chicago.facts.most_visited_l_stop.body', anything).and_call_original
+      expect(fun_fact.body).to be_present
+    end
+
+    it 'sets the heading' do
+      expect(I18n).to receive(:t).with('chicago.facts.most_visited_l_stop.heading', anything).and_call_original
+      expect(fun_fact.heading).to be_present
     end
 
     it 'sets the name' do

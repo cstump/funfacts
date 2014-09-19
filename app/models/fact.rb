@@ -2,8 +2,8 @@ class Fact < ActiveRecord::Base
   has_and_belongs_to_many :regions
   has_and_belongs_to_many :datasets
 
-  validates :name, :description, presence: true
-  validate :has_a_dataset, :has_a_region
+  validates :name, presence: true
+  validate :has_a_dataset, :has_a_region, :has_a_description
 
   before_save :assign_position
 
@@ -22,5 +22,9 @@ class Fact < ActiveRecord::Base
 
   def has_a_region
     errors.add :regions, I18n.t('errors.no_regions') if regions.empty?
+  end
+
+  def has_a_description
+    errors.add :base, I18n.t('errors.no_description') if body.blank? && heading.blank?
   end
 end
