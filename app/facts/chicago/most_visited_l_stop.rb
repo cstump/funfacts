@@ -1,27 +1,7 @@
 module Chicago
   class MostVisitedLStop
+    include Updateable
     include ActionView::Helpers::NumberHelper
-
-    def update!
-      fact = Fact.find_or_initialize_by name: self.class.name
-      fact.datasets << dataset
-      fact.regions << Region.chicago
-      fact.body = fact_body
-      fact.heading = fact_heading
-      fact.save!
-      fact
-    end
-
-
-    private
-    
-    def client
-      ChicagoClient.new
-    end
-
-    def dataset
-      @dataset ||= Dataset.find_by(name: 'LStationEntries')
-    end
 
     def busiest_l_stop
       @busiest ||= Hashie::Mash.new(
@@ -29,7 +9,7 @@ module Chicago
               .group('stationame')
               .order('sum_monthtotal DESC')
               .limit(1)
-              .get(dataset.uid)
+              .get(datasets.first.uid)
               .first
       )
     end
@@ -38,17 +18,21 @@ module Chicago
       @dates ||= begin
         client.select('month_beginning')
               .where("stationame = '#{busiest_l_stop.stationame}'")
-              .get(dataset.uid)
+              .get(datasets.first.uid)
               .map{|m| Time.parse m['month_beginning']}
               .sort
       end
     end
 
-    def fact_heading
+    def datasets
+      [ Dataset.find_by(name: 'LStationEntries') ]
+    end
+
+    def heading
       I18n.t 'chicago.facts.most_visited_l_stop.heading', stationame: busiest_l_stop.stationame
     end
 
-    def fact_body
+    def body
       I18n.t('chicago.facts.most_visited_l_stop.body',
         stationame: busiest_l_stop.stationame,
         total: number_with_delimiter(busiest_l_stop.sum_monthtotal),
