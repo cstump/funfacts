@@ -3,7 +3,7 @@
     margin-top: 6%;
   }
 
-  .fact {
+  article {
     margin: 10px 0 23px 0;
 
     h2 {
@@ -16,12 +16,12 @@
     }
   }
 
-  .sources {
+  aside {
     font-weight: lighter;
-  }
 
-  #source-label {
-    color: $source-label-color;
+    span {
+      color: $source-label-color;
+    }
   }
 
   @media (min-width: $screen-md-min) {
