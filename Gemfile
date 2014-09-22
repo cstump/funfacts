@@ -2,16 +2,17 @@ source 'https://rubygems.org'
 
 # application
 gem 'rails', '4.1.6'
-gem 'pg'
+gem 'mysql2'
 gem 'hashie'
 gem 'soda-ruby', require: 'soda'
 gem 'kaminari'
 gem 'haml-rails'
 
 # production
-gem 'thin'
+gem 'unicorn'
 gem 'whenever', require: false
 gem 'capistrano',  '~> 3.1'
+gem 'capistrano-rvm'
 gem 'capistrano-rails', '~> 1.1'
 gem 'therubyracer',  platforms: :ruby
 
