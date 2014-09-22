@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.6'
 gem 'pg'
-gem 'unicorn'
+gem 'thin'
 gem 'hashie'
 gem 'whenever', require: false
 gem 'soda-ruby', require: 'soda'
