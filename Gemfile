@@ -1,13 +1,19 @@
 source 'https://rubygems.org'
 
+# application
 gem 'rails', '4.1.6'
 gem 'pg'
-gem 'thin'
 gem 'hashie'
-gem 'whenever', require: false
 gem 'soda-ruby', require: 'soda'
 gem 'kaminari'
 gem 'haml-rails'
+
+# production
+gem 'thin'
+gem 'whenever', require: false
+gem 'capistrano',  '~> 3.1'
+gem 'capistrano-rails', '~> 1.1'
+gem 'therubyracer',  platforms: :ruby
 
 # assets
 gem 'sass-rails', '~> 4.0.3'
@@ -16,7 +22,6 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
-gem 'font-awesome-rails'
 gem 'turbolinks'
 
 group :development do
@@ -39,9 +44,3 @@ group :development, :test do
   gem 'awesome_print'
   gem 'faker'
 end
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
