@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.5'
+gem 'rails', '4.1.6'
 gem 'pg'
 gem 'unicorn'
 gem 'hashie'
-gem 'whenever', :require => false
-gem 'soda-ruby', :require => 'soda'
+gem 'whenever', require: false
+gem 'soda-ruby', require: 'soda'
 gem 'kaminari'
 gem 'haml-rails'
 
