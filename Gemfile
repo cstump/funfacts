@@ -11,9 +11,6 @@ gem 'haml-rails'
 # production
 gem 'unicorn'
 gem 'whenever', require: false
-gem 'capistrano',  '~> 3.1'
-gem 'capistrano-rvm'
-gem 'capistrano-rails', '~> 1.1'
 gem 'therubyracer',  platforms: :ruby
 
 # assets
@@ -31,6 +28,13 @@ group :development do
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
+
+  # deployment
+  gem 'capistrano', '~> 3.1'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano3-unicorn'
+  gem 'capistrano3-nginx', '~> 2.0'
 end
 
 group :test do
