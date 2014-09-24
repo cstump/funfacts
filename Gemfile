@@ -34,7 +34,6 @@ group :development do
   gem 'capistrano-rvm'
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano3-unicorn'
-  gem 'capistrano3-nginx', '~> 2.0'
 end
 
 group :test do

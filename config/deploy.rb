@@ -5,7 +5,6 @@ set :application, 'funfacts'
 set :repo_url, 'git@github.com:cstump/funfacts.git'
 set :linked_files, %w{config/database.yml config/secrets.yml}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets}
-set :unicorn_config_path, File.join(release_path, 'config', 'server', 'unicorn.rb')
-set :nginx_template, File.join(release_path, 'config', 'server', 'nginx.conf')
+set :unicorn_config_path, File.join(release_path, 'config', 'unicorn.rb')
 
 after 'deploy:publishing', 'deploy:restart'
