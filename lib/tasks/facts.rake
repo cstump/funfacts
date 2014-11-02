@@ -11,7 +11,8 @@ namespace :ff do
 
     Dir[ facts_dir.join('**', '*.rb') ].each do |fact_file|
       begin
-        file_to_class(fact_file).new.update!
+        klass = file_to_class fact_file
+        klass.new.try :update! if klass.respond_to? :new
       rescue => e
         puts "#{fact_file} failed to update!: #{e.message}\n#{e.backtrace.join("\n")}"
       end
