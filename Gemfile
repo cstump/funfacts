@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # application
-gem 'rails', '4.1.6'
+gem 'rails', '4.1.8'
 gem 'mysql2'
 gem 'hashie'
 gem 'soda-ruby', require: 'soda'
