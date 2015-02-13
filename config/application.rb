@@ -24,5 +24,7 @@ module FunFacts
       g.template_engine :haml
       g.test_framework :rspec
     end
+
+    config.active_record.raise_in_transactional_callbacks = true
   end
 end
