@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 26 Aug 2014 02:57:13 GMT
+      - Fri, 13 Feb 2015 02:16:32 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -34,10 +34,8 @@ http_interactions:
       - keep-alive
       Access-Control-Allow-Origin:
       - "*"
-      Etag:
-      - '"4f100708768b63b0036b2fd7b2d938ac"'
       Last-Modified:
-      - Wed, 20 Aug 2014 14:16:37 PDT
+      - Tue, 20 Jan 2015 15:24:16 PST
       X-Soda2-Warning:
       - X-SODA2-Fields, X-SODA2-Types, and X-SODA2-Legacy-Types are deprecated
       X-Soda2-Fields:
@@ -49,20 +47,20 @@ http_interactions:
       X-Socrata-Region:
       - production
       Age:
-      - '0'
+      - '2'
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       string: |-
         [ {
           "stationame" : "Clark/Lake",
-          "sum_monthtotal" : "64547764"
+          "sum_monthtotal" : "67446787"
         }
          ]
     http_version: 
-  recorded_at: Tue, 26 Aug 2014 02:57:13 GMT
+  recorded_at: Fri, 13 Feb 2015 02:16:32 GMT
 - request:
     method: get
-    uri: https://data.cityofchicago.org/resource/t2rn-p8d7.json?$select=month_beginning&$where=stationame%20=%20'Clark/Lake'
+    uri: https://data.cityofchicago.org/resource/t2rn-p8d7.json?$select=month_beginning&$where=stationame%20=%20%27Clark/Lake%27
     body:
       encoding: UTF-8
       string: 'null'
@@ -85,7 +83,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 26 Aug 2014 02:57:14 GMT
+      - Fri, 13 Feb 2015 02:16:32 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -94,10 +92,8 @@ http_interactions:
       - keep-alive
       Access-Control-Allow-Origin:
       - "*"
-      Etag:
-      - '"4f100708768b63b0036b2fd7b2d938ac"'
       Last-Modified:
-      - Wed, 20 Aug 2014 21:16:37 UTC
+      - Tue, 20 Jan 2015 15:24:16 PST
       X-Soda2-Warning:
       - X-SODA2-Fields, X-SODA2-Types, and X-SODA2-Legacy-Types are deprecated
       X-Soda2-Fields:
@@ -109,9 +105,9 @@ http_interactions:
       X-Socrata-Region:
       - production
       Age:
-      - '2'
+      - '0'
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       string: |-
         [ {
           "month_beginning" : "2001-01-01T00:00:00"
@@ -596,7 +592,25 @@ http_interactions:
         , {
           "month_beginning" : "2014-05-01T00:00:00"
         }
+        , {
+          "month_beginning" : "2014-06-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2014-07-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2014-08-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2014-09-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2014-10-01T00:00:00"
+        }
+        , {
+          "month_beginning" : "2014-11-01T00:00:00"
+        }
          ]
     http_version: 
-  recorded_at: Tue, 26 Aug 2014 02:57:14 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Fri, 13 Feb 2015 02:16:32 GMT
+recorded_with: VCR 2.9.3
