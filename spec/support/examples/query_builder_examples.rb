@@ -25,12 +25,12 @@ RSpec.shared_examples_for 'QueryBuilder' do
       expect(builder.resource).to eq resource
     end
 
-    it 'properly initializes the super class' do
+    xit 'properly initializes the super class' do
       expect_any_instance_of(QueryBuilder).to receive(:initialize).with(resource, api_config)
       described_class.new resource
     end
 
-    it "properly initializes grandsuper class" do
+    xit "properly initializes grandsuper class" do
       expect_any_instance_of(SODA::Client).to receive(:initialize).with(api_config)
       described_class.new resource
     end
