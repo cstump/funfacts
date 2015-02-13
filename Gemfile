@@ -1,17 +1,11 @@
 source 'https://rubygems.org'
 
-# application
 gem 'rails', '4.2.0'
 gem 'mysql2'
 gem 'hashie'
 gem 'soda-ruby', require: 'soda'
 gem 'kaminari'
 gem 'haml-rails'
-
-# production
-gem 'unicorn'
-gem 'whenever', require: false
-gem 'therubyracer',  platforms: :ruby
 
 # assets
 gem 'sass-rails', '~> 4.0.3'
@@ -22,10 +16,14 @@ gem 'autoprefixer-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 
+# production
+gem 'unicorn'
+gem 'whenever', require: false
+gem 'therubyracer',  platforms: :ruby
+
 group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
-  gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
 
@@ -48,4 +46,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'awesome_print'
   gem 'faker'
+  gem 'pry-rails'
+  gem 'pry-byebug'
 end
