@@ -5,7 +5,7 @@ FactoryGirl.define do
     body { Faker::Lorem.sentence(8) }
     heading { Faker::Lorem.sentence }
 
-    ignore do
+    transient do
       regions_count 1
       datasets_count 1
     end
