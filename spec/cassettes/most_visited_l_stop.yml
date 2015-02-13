@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 13 Feb 2015 02:16:32 GMT
+      - Fri, 13 Feb 2015 03:01:58 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -47,9 +47,9 @@ http_interactions:
       X-Socrata-Region:
       - production
       Age:
-      - '2'
+      - '0'
     body:
-      encoding: ASCII-8BIT
+      encoding: UTF-8
       string: |-
         [ {
           "stationame" : "Clark/Lake",
@@ -57,10 +57,10 @@ http_interactions:
         }
          ]
     http_version: 
-  recorded_at: Fri, 13 Feb 2015 02:16:32 GMT
+  recorded_at: Fri, 13 Feb 2015 03:01:58 GMT
 - request:
     method: get
-    uri: https://data.cityofchicago.org/resource/t2rn-p8d7.json?$select=month_beginning&$where=stationame%20=%20%27Clark/Lake%27
+    uri: https://data.cityofchicago.org/resource/t2rn-p8d7.json?$select=month_beginning&$where=stationame%20=%20'Clark/Lake'
     body:
       encoding: UTF-8
       string: 'null'
@@ -83,7 +83,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 13 Feb 2015 02:16:32 GMT
+      - Fri, 13 Feb 2015 03:01:59 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -107,7 +107,7 @@ http_interactions:
       Age:
       - '0'
     body:
-      encoding: ASCII-8BIT
+      encoding: UTF-8
       string: |-
         [ {
           "month_beginning" : "2001-01-01T00:00:00"
@@ -612,5 +612,5 @@ http_interactions:
         }
          ]
     http_version: 
-  recorded_at: Fri, 13 Feb 2015 02:16:32 GMT
+  recorded_at: Fri, 13 Feb 2015 03:01:59 GMT
 recorded_with: VCR 2.9.3
