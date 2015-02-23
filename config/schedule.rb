@@ -20,5 +20,5 @@
 # Learn more: http://github.com/javan/whenever
 
 every :day, at: '1 am' do
-  rake 'ff:update_facts'
+  rake 'ff:facts:update'
 end
