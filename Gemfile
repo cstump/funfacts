@@ -6,6 +6,7 @@ gem 'hashie'
 gem 'soda-ruby', require: 'soda'
 gem 'kaminari'
 gem 'haml-rails'
+gem 'rest-client'
 
 # assets
 gem 'sass-rails', '~> 4.0.3'
