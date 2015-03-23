@@ -31,7 +31,7 @@ shared_examples_for 'updateable' do
 
     it 'associates the fact with the dataset' do
       expect(fun_fact.datasets.size).to eq 1
-      expect(fun_fact.datasets.first).to eq Dataset.where(name: 'LStationEntries').first
+      expect(fun_fact.datasets.first).to eq dataset
     end
   end
 

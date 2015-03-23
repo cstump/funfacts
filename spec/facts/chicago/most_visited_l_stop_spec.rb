@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe Chicago::MostVisitedLStop, vcr: { cassette_name: 'most visited l stop' } do
   it_should_behave_like 'updateable'
 
+  let!(:dataset) { create :dataset, uid: 't2rn-p8d7' }
+
   subject(:fact) { described_class.new }
 
   it 'requests the right resource' do
