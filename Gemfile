@@ -6,7 +6,7 @@ gem 'hashie'
 gem 'soda-ruby', require: 'soda'
 gem 'kaminari'
 gem 'haml-rails'
-gem 'rest-client'
+gem 'faraday'
 gem 'nokogiri'
 
 # assets
