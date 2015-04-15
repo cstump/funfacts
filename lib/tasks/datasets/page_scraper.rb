@@ -23,9 +23,9 @@ class PageScraper < PageProcessor
   # @param [Hash] same as described for #scrape_page
   # @param [Range] the range of pages to scrape (inclusive)
   # @return [Hash] same as described for #scrape_page
-  def scrape(selectors, page_range)
+  def scrape_range(selectors, page_range)
     page_range.each do |i|
-      path = page_path i
+      path = page_path suffix: i
       puts path
       scrape_page selectors, path
     end
@@ -49,7 +49,7 @@ class PageScraper < PageProcessor
   private
 
   def all_pages
-    Dir[ page_path('*') ]
+    Dir[ page_path(suffix: '*') ]
   end
 
   def parse_page(path)
