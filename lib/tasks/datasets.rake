@@ -1,36 +1,15 @@
-require_relative 'datasets/page_fetcher'
-require_relative 'datasets/page_scraper'
+require_relative 'datasets/dataset_grabber'
 
 namespace :ff do
   namespace :datasets do
-
-    def fetcher_for(city)
-      PageFetcher.new Secrets.datasets.send(city).index_url
-    end
-
-    def scraper_for(city)
-      PageScraper.new Secrets.datasets.send(city).index_url
-    end
-
     desc <<-DESC
       Retrieves the index pages of city datasets. The index URL is configured
       in secrets.yml under datasets/<city name>/index_url. The URL is expected
       to contain a "page=N" parameter. Retrieved HTML is stored under tmp.
     DESC
-    task :fetch, %i(first_page last_page city) => :environment do |t, args|
+    task :grab, %i(first_page last_page city) => :environment do |t, args|
       args.with_defaults city: 'chicago'
-      fetcher_for(args.city).fetch Range.new(args.first_page, args.last_page)
-    end
-
-    def update_datasets(*nodes)
-      nodes.each do |selection|
-        uri = selection.attribute('href').value
-        uid = uri.split('/').last
-        name = selection.content
-        dataset = Dataset.find_or_initialize_by uid: uid
-        dataset.attributes = { uri: uri, name: name }
-        dataset.save!
-      end
+      DatasetGrabber.new(args.city).grab_datasets args.first_page, args.last_page
     end
 
     desc <<-DESC
@@ -39,17 +18,22 @@ namespace :ff do
     DESC
     task :load, %i(first_page last_page city dataset_url_selector) => :environment do |t, args|
       args.with_defaults city: 'chicago', dataset_url_selector: '.results a.name'
-      scraper = scraper_for args.city
-      selectors = { args.dataset_url_selector => [] }
-
-      if args.first_page && args.last_page
-        scraper.scrape selectors, Range.new(args.first_page, args.last_page)
-      else
-        scraper.scrape_all selectors
-      end
-
-      update_datasets *selectors.values.first
+      DatasetGrabber.new(args.city).load_datasets args.first_page, args.last_page, args.dataset_url_selector
     end
 
+    task :update, %i(first_page last_page) => %w(ff:datasets:grab ff:datasets:load)
+
+    namespace :columns do
+      desc <<-DESC
+      DESC
+      task :grab, %i(city) => :environment do |t, args|
+        args.with_defaults city: 'chicago'
+      end
+
+      task :load => :environment do |t, args|
+      end
+
+      task update: %w(ff:datasets:columns:grab ff:datasets:columns:load)
+    end
   end
 end
