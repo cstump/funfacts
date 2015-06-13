@@ -28,9 +28,11 @@ namespace :ff do
       DESC
       task :grab, %i(city) => :environment do |t, args|
         args.with_defaults city: 'chicago'
+        DatasetGrabber.new(args.city).grab_columns
       end
 
       task :load => :environment do |t, args|
+        # TODO: load the grabbed columns
       end
 
       task update: %w(ff:datasets:columns:grab ff:datasets:columns:load)

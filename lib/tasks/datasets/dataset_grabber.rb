@@ -28,13 +28,19 @@ class DatasetGrabber
   end
 
   def grab_columns
+    table_url = Secrets.datasets.send(city).table_url
+
+    Dataset.pluck(:uid).each do |uid|
+      fetcher = PageFetcher.new table_url.gsub('%{dataset_id}', uid), 'columns'
+      puts fetcher.url
+      # TODO: get column description file and store with uid filename
+    end
   end
 
   def load_columns
-    # for each dataset
-    # parse each column description file
-    # destroy all columns of dataset
-    # recreate all dataset columns from file
+    # TODO: for each dataset parse each column description file
+    # destroy all columns of dataset recreate all dataset columns
+    # from file
   end
 
 
