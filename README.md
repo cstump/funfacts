@@ -1,8 +1,8 @@
 # README
 
-This is a sample Rails app meant to show the preferred techniques and tooling of [Chris Stump](https://www.linkedin.com/in/chriscstump).
-It uses [Chicago's open data](https://data.cityofchicago.org/) to display interesting facts about the city. Although
-designed to store, update, and display facts from multiple cities concurrently as of now it only deals with Chicago.
+This is a sample Rails app meant to show the preferred development techniques and tooling of [Chris Stump](https://www.linkedin.com/in/chriscstump).
+The app is designed to store, update, and display interesting facts about cities. Currently it only knows about Chicago
+through [the city's open data project](https://data.cityofchicago.org/).
 
 ## In Action
 
