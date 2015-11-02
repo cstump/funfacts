@@ -1,7 +1,0 @@
-== README
-
-This webapp uses data from city open data to display interesting facts about a city. The webapp is complete in that it
-can store, update, and display facts from multiple cities. However, each fact has to be "hand crafted", which is a mighty
-pain in the ass. That said, the project's work-in-progress is finding a way to generate interesting facts. That effort
-was started but not finished. The work for the effort is in datasets.rake. See the TODO comments in that file and its
-associated files to see where the work was left off.
