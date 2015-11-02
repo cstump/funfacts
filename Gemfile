@@ -17,6 +17,7 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'react-rails', '~> 1.0'
 
 # production
 gem 'unicorn'
