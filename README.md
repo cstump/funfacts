@@ -6,7 +6,8 @@ through [the city's open data project](https://data.cityofchicago.org/).
 
 ## In Action
 
-A running version of this webapp can be found at [http://funfactschicago.com](http://funfactschicago.com)
+A running version of this webapp can be found at [http://funfactschicago.com](http://funfactschicago.com). I manage the
+application myself from a Linux server using [Unicorn](http://unicorn.bogomips.org/) and [Nginx](https://www.nginx.com/).
 
 ## More Samples
 
