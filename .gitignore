@@ -9,4 +9,3 @@
 /tmp
 /coverage
 /config/database.yml
-/config/secrets.yml
