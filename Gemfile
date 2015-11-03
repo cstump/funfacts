@@ -8,6 +8,7 @@ gem 'kaminari'
 gem 'haml-rails'
 gem 'faraday'
 gem 'nokogiri'
+gem "active_model_serializers"
 
 # assets
 gem 'sass-rails', '~> 4.0.3'
