@@ -1,11 +1,11 @@
-FF.FactList = React.createClass({
+FF.FactsIndex.FactList = React.createClass({
   propTypes: {
     facts: React.PropTypes.arrayOf(React.PropTypes.object).isRequired
   },
 
   renderFacts: function() {
     return this.props.facts.map(function(fact) {
-      return <FF.Fact fact={fact} key={fact.id}/>;
+      return <FF.FactsIndex.Fact fact={fact} key={fact.id}/>;
     });
   },
 

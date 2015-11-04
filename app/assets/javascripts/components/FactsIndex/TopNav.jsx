@@ -1,4 +1,4 @@
-FF.TopNav = React.createClass({
+FF.FactsIndex.TopNav = React.createClass({
   propTypes: {
     regionPath: React.PropTypes.string.isRequired,
     headingLink: React.PropTypes.string.isRequired,

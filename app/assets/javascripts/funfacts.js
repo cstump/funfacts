@@ -1,1 +1,3 @@
-FF = {};
+FF = {
+  FactsIndex: {}
+};

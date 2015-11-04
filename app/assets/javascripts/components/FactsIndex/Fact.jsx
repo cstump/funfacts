@@ -1,4 +1,4 @@
-FF.Fact = React.createClass({
+FF.FactsIndex.Fact = React.createClass({
   propTypes: {
     fact: React.PropTypes.object.isRequired
   },
