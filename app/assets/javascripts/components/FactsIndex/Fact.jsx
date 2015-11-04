@@ -17,7 +17,7 @@ FF.FactsIndex.Fact = React.createClass({
           <p>{this.props.fact.body}</p>
         </article>
         <aside>
-          <span>Source: </span>
+          <span>Source:</span>
           {this.renderSources()}
         </aside>
       </div>

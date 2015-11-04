@@ -20,7 +20,16 @@
     font-weight: lighter;
 
     span {
+      padding-right: 5px;
       color: $source-label-color;
+    }
+
+    a:after {
+      content: ", ";
+    }
+
+    a:last-child:after {
+        content: "";
     }
   }
 
