@@ -18,4 +18,4 @@
 //= require bootstrap
 //= require funfacts
 //= require_tree ./components
-//= require_tree .
+//= require chicago
