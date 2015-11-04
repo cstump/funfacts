@@ -1,16 +1,9 @@
-= render partial: "top_nav"
+= react_component 'FF.TopNav',
+  regionPath: region_path('root'),
+  headingLink: region_t('heading'),
+  aboutLink: t('nav.about'),
+  suggestLink: t('nav.suggestion')
 
 .container
-  %ul#facts.list-group
-
-    - @facts.each do |fact|
-      %li.list-group-item
-        %article
-          %h2= fact.heading.html_safe
-          %p= fact.body.html_safe
-
-        %aside
-          %span= t 'source.label'
-          = source_links_for fact
-
+  = react_component 'FF.FactList', facts: serialized_facts
   = paginate @facts

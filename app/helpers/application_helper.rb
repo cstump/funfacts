@@ -12,12 +12,4 @@ module ApplicationHelper
     send "#{name}_path", args.merge(region: region_name)
   end
 
-  def source_links_for(fact)
-    sets = fact.datasets.map do |set|
-      link_to t('source.link', link: set.name.underscore.humanize), set.uri, target: '_blank'
-    end
-
-    sets.join(', ').html_safe
-  end
-
 end

@@ -23,17 +23,4 @@ RSpec.describe ApplicationHelper, type: :helper do
     helper.region_path 'root', params
   end
 
-
-  describe '#source_links_for' do
-    let(:fact) { build(:fact, datasets_count: 3) }
-    let(:datasets) { fact.datasets }
-    let(:links) { helper.source_links_for fact }
-
-    it 'returns a list of dataset URL links' do
-      datasets.map(&:uri).each do |url|
-        expect(links).to include url
-      end
-    end
-  end
-
 end
