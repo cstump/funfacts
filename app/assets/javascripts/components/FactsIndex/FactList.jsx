@@ -5,15 +5,19 @@ FF.FactsIndex.FactList = React.createClass({
 
   renderFacts: function() {
     return this.props.facts.map(function(fact) {
-      return <FF.FactsIndex.Fact fact={fact} key={fact.id}/>;
+      return (
+        <div className="list-group-item" key={fact.id}>
+          <FF.FactsIndex.Fact fact={fact}/>
+        </div>
+      );
     });
   },
 
   render: function() {
     return (
-      <ul id="facts" className="list-group">
+      <div id="facts" className="list-group">
         {this.renderFacts()}
-      </ul>
+      </div>
     );
   }
 });
