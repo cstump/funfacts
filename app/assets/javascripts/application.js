@@ -14,8 +14,6 @@
 //= require react
 //= require react_ujs
 //= require jquery
-//= require jquery.infinitescroll
 //= require bootstrap
 //= require funfacts
 //= require_tree ./components
-//= require chicago
