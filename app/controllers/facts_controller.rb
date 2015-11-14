@@ -1,13 +1,9 @@
 class FactsController < ApplicationController
   include FactsHelper
 
+  before_action :find_facts
+
   def index
-    @facts = Region.find_by(name: region.name)
-                   .facts
-                   .page(facts_params[:page])
-                   .per facts_per_page
-
-
     respond_to do |format|
       format.html
       format.json { render json: serialized_facts }
@@ -16,6 +12,13 @@ class FactsController < ApplicationController
 
 
   private
+
+  def find_facts
+    @facts = Region.find_by(name: region.name)
+                   .facts
+                   .page(facts_params[:page])
+                   .per facts_per_page
+  end
 
   def facts_params
     params.permit %i(page per)
