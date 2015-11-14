@@ -15,6 +15,7 @@
 //= require react_ujs
 //= require jquery
 //= require bootstrap
-//= require react-infinite-scroll
+//= require reflux
+//= require react-infinite-scroll.min
 //= require funfacts
 //= require_tree ./components

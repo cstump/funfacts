@@ -18,6 +18,9 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
 gem 'react-rails', '~> 1.0'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-reflux'
+end
 
 # production
 gem 'unicorn'
