@@ -15,5 +15,6 @@
 //= require react_ujs
 //= require jquery
 //= require bootstrap
+//= require react-infinite-scroll
 //= require funfacts
 //= require_tree ./components
