@@ -16,6 +16,6 @@
 //= require jquery
 //= require bootstrap
 //= require reflux
-//= require react-infinite
+//= require react-infinite.min
 //= require funfacts
 //= require_tree ./components

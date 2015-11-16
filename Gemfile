@@ -20,7 +20,6 @@ gem 'jquery-rails'
 gem 'react-rails', '~> 1.0'
 source 'https://rails-assets.org' do
   gem 'rails-assets-reflux'
-  gem 'rails-assets-react-infinite'
 end
 
 # production
