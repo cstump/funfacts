@@ -18,4 +18,6 @@
 //= require reflux
 //= require react-infinite.min
 //= require funfacts
+//= require_tree ./actions
+//= require_tree ./stores
 //= require_tree ./components

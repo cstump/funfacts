@@ -1,10 +1,20 @@
 FF.FactsIndex.FactList = React.createClass({
+  mixins: [Reflux.listenTo(FF.PageStore,"onPageFetch")],
+
   propTypes: {
     facts: React.PropTypes.arrayOf(React.PropTypes.object).isRequired
   },
 
+  getInitialState: function() {
+    return {
+      pageNo: 1,
+      facts: this.props.facts,
+      isInfiniteLoading: false
+    };
+  },
+
   renderFacts: function() {
-    return this.props.facts.map(function(fact) {
+    return this.state.facts.map(function(fact) {
       return (
         <div className="list-group-item" key={fact.id}>
           <FF.FactsIndex.Fact fact={fact}/>
@@ -13,11 +23,37 @@ FF.FactsIndex.FactList = React.createClass({
     });
   },
 
+  fetchNextPage: function() {
+    this.setState({ isInfiniteLoading: true });
+    FF.PageActions.fetchNextPage(this.state.pageNo + 1);
+  },
+
+  onPageFetch: function(moreFacts) {
+    this.setState({
+      pageNo: this.state.pageNo + 1,
+      facts: this.state.facts.concat(moreFacts),
+      isInfiniteLoading: false
+    });
+  },
+
+  renderSpinner: function() {
+    return <div className="infinite-list-item">Loading...</div>;
+  },
+
   render: function() {
     return (
-      <div id="facts" className="list-group">
+      <Infinite className="list-group"
+                elementHeight={149}
+                containerHeight={window.innerHeight}
+                infiniteLoadBeginEdgeOffset={200}
+                onInfiniteLoad={this.fetchNextPage}
+                preloadBatchSize={Infinite.containerHeightScaleFactor(1)}
+                preloadAdditionalHeight={Infinite.containerHeightScaleFactor(1)}
+                loadingSpinnerDelegate={this.renderSpinner()}
+                isInfiniteLoading={this.state.isInfiniteLoading}
+                useWindowAsScrollContainer={true}>
         {this.renderFacts()}
-      </div>
+      </Infinite>
     );
   }
 });
