@@ -7,11 +7,12 @@ FF.FactsIndex.FactList = React.createClass({
     Reflux.listenTo(FF.PageStore,"onPageFetch")
   ],
 
-  onPageFetch: function(moreFacts) {
+  onPageFetch: function(response) {
     this.setState({
       pageNo: this.state.pageNo + 1,
-      facts: this.state.facts.concat(moreFacts),
-      isInfiniteLoading: false
+      facts: this.state.facts.concat(response['facts']),
+      isInfiniteLoading: false,
+      isLastPage: response['last_page']
     });
   },
 
@@ -19,7 +20,8 @@ FF.FactsIndex.FactList = React.createClass({
     return {
       pageNo: 1,
       facts: this.props.facts,
-      isInfiniteLoading: false
+      isInfiniteLoading: false,
+      isLastPage: false
     };
   },
 
@@ -34,8 +36,12 @@ FF.FactsIndex.FactList = React.createClass({
   },
 
   fetchNextPage: function() {
-    this.setState({ isInfiniteLoading: true });
-    FF.PageActions.fetchNextPage(this.state.pageNo + 1);
+    var isLastPage = this.state.isLastPage;
+    this.setState({ isInfiniteLoading: !isLastPage });
+
+    if(!isLastPage) {
+      FF.PageActions.fetchNextPage(this.state.pageNo + 1);
+    }
   },
 
   renderSpinner: function() {

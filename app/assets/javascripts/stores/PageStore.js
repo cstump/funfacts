@@ -8,9 +8,7 @@ FF.PageStore = Reflux.createStore({
     $.getJSON(
       this.url,
       { page: nextPageNo },
-      function(data) {
-        self.trigger(data['facts']);
-      }
+      function(data) { self.trigger(data); }
     );
   }
 });
