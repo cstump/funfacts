@@ -11,10 +11,24 @@ RSpec.describe FactsController, type: :controller do
     expect(assigns(:facts).size).to eq Secrets.facts_per_page
   end
 
-  it 'responds with JSON when asked for JSON' do
-    get :index, format: :json
-    parsed = JSON.parse(response.body)['facts']
-    expect(parsed.map{|obj| obj['id']}).to match_array facts.map(&:id)
+  describe 'JSON response' do
+    let(:parsed) { JSON.parse(response.body) }
+
+    it 'serializes the facts' do
+      get :index, format: :json
+      parsed_facts = parsed['facts']
+      expect(parsed_facts.map{|obj| obj['id']}).to match_array facts.map(&:id)
+    end
+
+    it 'is the last page' do
+      get :index, format: :json
+      expect(parsed['last_page']).to be
+    end
+
+    it 'is not the last page' do
+      get :index, format: :json, per: facts_per_page / 2
+      expect(parsed['last_page']).to_not be
+    end
   end
 
   describe 'region setting' do

@@ -6,7 +6,12 @@ class FactsController < ApplicationController
   def index
     respond_to do |format|
       format.html
-      format.json { render json: serialized_facts }
+      format.json do
+        render json: {
+          facts: serialized_facts,
+          last_page: @facts.last_page?
+        }
+      end
     end
   end
 
