@@ -45,7 +45,11 @@ FF.FactsIndex.FactList = React.createClass({
   },
 
   renderSpinner: function() {
-    return <div className="infinite-list-item">Loading...</div>;
+    return (
+      <div className="infinite-list-item">
+        <%= image_tag asset_url('chicago-ajax-loader.gif') %>
+      </div>
+    );
   },
 
   render: function() {
