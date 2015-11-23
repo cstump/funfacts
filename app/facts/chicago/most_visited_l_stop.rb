@@ -4,7 +4,7 @@ module Chicago
     include ActionView::Helpers::NumberHelper
 
     def busiest_l_stop
-      @busiest ||= Hashie::Mash.new(
+      @busiest ||= OpenStruct.new(
         client.select('stationame,sum(monthtotal)')
               .group('stationame')
               .order('sum_monthtotal DESC')
