@@ -1,9 +1,6 @@
-= react_component 'FF.FactsIndex.TopNav',
+= react_component 'FF.FactsIndex.Index',
   regionPath: region_path('root'),
   headingLink: region_t('heading'),
   aboutLink: t('nav.about'),
-  suggestLink: t('nav.suggestion')
-
-.container
-  = react_component 'FF.FactsIndex.FactList', facts: serialized_facts
-  = paginate @facts
+  suggestLink: t('nav.suggestion'),
+  facts: serialized_facts
