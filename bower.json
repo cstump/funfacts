@@ -1,0 +1,28 @@
+{
+  "name": "funfacts",
+  "homepage": "https://github.com/cstump/funfacts",
+  "authors": [
+    "Chris Stump <ccstump@gmail.com>"
+  ],
+  "description": "The app is designed to store, update, and display interesting facts about cities.",
+  "main": "config/application.rb",
+  "moduleType": [],
+  "keywords": [
+    "fun",
+    "facts"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "reflux": "0.3.0",
+    "jquery": "2.1.4"
+  }
+}

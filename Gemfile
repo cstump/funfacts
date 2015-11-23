@@ -16,11 +16,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
-gem 'jquery-rails'
 gem 'react-rails', '~> 1.0'
-source 'https://rails-assets.org' do
-  gem 'rails-assets-reflux'
-end
+
 
 # production
 gem 'unicorn'
