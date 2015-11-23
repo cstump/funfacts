@@ -5,7 +5,6 @@ gem 'mysql2'
 gem 'hashie'
 gem 'soda-ruby', require: 'soda'
 gem 'kaminari'
-gem 'haml-rails'
 gem 'faraday'
 gem 'nokogiri'
 gem "active_model_serializers"
