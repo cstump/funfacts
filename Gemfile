@@ -7,7 +7,7 @@ gem 'soda-ruby', require: 'soda'
 gem 'kaminari'
 gem 'faraday'
 gem 'nokogiri'
-gem "active_model_serializers"
+gem 'active_model_serializers'
 
 # assets
 gem 'sass-rails', '~> 4.0.3'
@@ -16,7 +16,6 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'react-rails', '~> 1.0'
-
 
 # production
 gem 'unicorn'
