@@ -29,7 +29,7 @@ group :development do
   gem 'binding_of_caller'
 
   # deployment
-  gem 'capistrano', '~> 3.1'
+  gem 'capistrano', '3.2.1'
   gem 'capistrano-rvm'
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano3-unicorn'
