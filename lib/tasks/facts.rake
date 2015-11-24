@@ -1,3 +1,5 @@
+require 'dotenv/tasks'
+
 namespace :ff do
   namespace :facts do
 
