@@ -6,8 +6,9 @@ about [Chicago](https://data.cityofchicago.org/). Facts are generated using [Soc
 
 ## In Action
 
-A running version of this webapp can be found at [http://funfactschicago.com](http://funfactschicago.com).
-Right now there is a bunch of fake data up there.
+When the app is running (with fake data) it looks like this:
+
+![funfacts web application](https://dl.dropboxusercontent.com/u/913951/funfacts.png "Fun Facts in action")
 
 ## More Code Samples
 
